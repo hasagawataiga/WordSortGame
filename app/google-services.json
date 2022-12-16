@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "913837085774",
+    "project_id": "wordsortgame",
+    "storage_bucket": "wordsortgame.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913837085774:android:9e21e56ddfe77225681f1f",
+        "android_client_info": {
+          "package_name": "orca.application.wordsortgame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913837085774-cnm6oc00qlefr2iae0jiiec6l0o9kor7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBV6jJRoq72DnI38drokAl9oRc8WXgFqUE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "913837085774-cnm6oc00qlefr2iae0jiiec6l0o9kor7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

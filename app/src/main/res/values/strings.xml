@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">WordSortGame</string>
+    <string name="WordSortGame">Word Sort Game</string>
+    <string name="Start">START</string>
+    <string name="LoginTag">Login to your account</string>
+    <string name="FullName">Full Name</string>
+    <string name="Email">Email</string>
+    <string name="PhoneNumber">Phone Number</string>
+    <string name="Password">Password</string>
+    <string name="Register">Register</string>
+    <string name="ReturnToHome">Return to Home</string>
+    <string name="CreateAccount">Create a New Account</string>
+    <string name="NewHere">New Here? Create an Account</string>
+</resources>
