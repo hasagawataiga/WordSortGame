@@ -11,4 +11,5 @@
     <string name="ReturnToHome">Return to Home</string>
     <string name="CreateAccount">Create a New Account</string>
     <string name="NewHere">New Here? Create an Account</string>
+    <string name="Username">Username</string>
 </resources>

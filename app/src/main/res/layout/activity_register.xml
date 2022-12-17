@@ -36,7 +36,7 @@
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_fullName"
+        app:layout_constraintBottom_toTopOf="@+id/et_username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
@@ -50,6 +50,7 @@
         android:ems="10"
         android:hint="@string/Email"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:padding="10dp"
         android:textColor="#000000"
         android:textColorHint="#000000"
@@ -65,6 +66,7 @@
         android:ems="10"
         android:hint="@string/PhoneNumber"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:padding="10dp"
         android:textColor="#000000"
         android:textColorHint="#000000"
@@ -74,13 +76,14 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/et_fullName"
+        android:id="@+id/et_username"
         android:layout_width="379dp"
         android:layout_height="wrap_content"
         android:background="#00000000"
         android:ems="10"
-        android:hint="@string/FullName"
+        android:hint="@string/Username"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:padding="10dp"
         android:textColor="#000000"
         android:textColorHint="#000000"
@@ -97,6 +100,7 @@
         android:ems="10"
         android:hint="@string/Password"
         android:inputType="textPassword"
+        android:minHeight="48dp"
         android:padding="10dp"
         android:textColor="#000000"
         android:textColorHint="#000000"
@@ -110,7 +114,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:background="#000000"
-        android:onClick="goToLogin"
+        android:onClick="register"
         android:text="@string/Register"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
@@ -120,20 +124,24 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
+    <!--    app:fontFamily="@font/advent_pro_thin"-->
+
     <TextView
         android:id="@+id/tv_goToLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="152dp"
+        android:onClick="goToLogin"
         android:text="Already Registered? Login Here"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_returnHome"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-<!--    app:fontFamily="@font/advent_pro_thin"-->
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -151,7 +159,7 @@
         android:id="@+id/tv_returnHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="20dp"
         android:onClick="returnHome"
         android:text="@string/ReturnToHome"
         android:textColor="#000000"
@@ -159,7 +167,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/progressBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-<!--    app:fontFamily="@font/advent_pro_thin"-->
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_goToLogin"
+        app:layout_constraintVertical_bias="0.204"
+        tools:ignore="TouchTargetSizeCheck" />
+    <!--    app:fontFamily="@font/advent_pro_thin"-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

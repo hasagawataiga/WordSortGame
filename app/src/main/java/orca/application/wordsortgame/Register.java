@@ -17,13 +17,17 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class Register extends AppCompatActivity {
-    EditText et_fullName, et_email, et_password, et_phoneNumber;
+    // Layout Components
+    EditText et_username, et_email, et_password, et_phoneNumber;
     Button btn_register;
     TextView tv_goToLogin, tv_returnHome;
+    // Init Firebase Authorization
     FirebaseAuth fAuth;
+    // Representations of layout components
     String userID;
     ProgressBar progressBar;
     String email;
@@ -31,13 +35,15 @@ public class Register extends AppCompatActivity {
     String password;
     int id;
     String phoneNumber;
-    final FirebaseDatabase database = FirebaseDatabase.getIntance();
+    // Init database
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference reference = database.getReference("User");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        et_fullName = findViewById(R.id.et_fullName);
+        et_username = findViewById(R.id.et_username);
         et_email = findViewById(R.id.et_email);
         et_password = findViewById(R.id.et_password);
         et_phoneNumber = findViewById(R.id.et_phoneNumber);
