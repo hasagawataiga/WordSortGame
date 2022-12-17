@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "913837085774",
+    "firebase_url": "https://wordsortgame-default-rtdb.firebaseio.com",
     "project_id": "wordsortgame",
     "storage_bucket": "wordsortgame.appspot.com"
   },

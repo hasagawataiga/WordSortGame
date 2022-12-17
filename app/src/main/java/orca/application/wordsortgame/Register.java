@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Register extends AppCompatActivity {
     EditText et_fullName, et_email, et_password, et_phoneNumber;
@@ -25,6 +26,12 @@ public class Register extends AppCompatActivity {
     FirebaseAuth fAuth;
     String userID;
     ProgressBar progressBar;
+    String email;
+    String fullName;
+    String password;
+    int id;
+    String phoneNumber;
+    final FirebaseDatabase database = FirebaseDatabase.getIntance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,57 +53,108 @@ public class Register extends AppCompatActivity {
             finish();
         }
 
-        btn_register.setOnClickListener(new View.OnClickListener(){
+
+//        btn_register.setOnClickListener(new View.OnClickListener(){
+//
+//            @Override
+//            public void onClick(View v) {
+//                String email = et_email.getText().toString().trim();
+//                String password = et_password.getText().toString().trim();
+//
+//                if(TextUtils.isEmpty(email)){
+//                    et_email.setError("Email is required.");
+//                    return;
+//                }
+//
+//                if(TextUtils.isEmpty(password)){
+//                    et_password.setError("Password is required.");
+//                    return;
+//                }
+//
+//                if(password.length() < 6){
+//                    et_password.setError("Password must be greater or equals to 6 characters.");
+//                }
+//
+//                progressBar.setVisibility(View.VISIBLE);
+//
+//                fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//
+//                    @Override
+//                    public void onComplete(@NonNull Task<AuthResult> task) {
+//                        if(task.isSuccessful()){
+//                            Toast.makeText(Register.this, "User Created.", Toast.LENGTH_SHORT).show();
+//                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+//
+//                        }
+//                        else{
+//                            Toast.makeText(Register.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+//                            progressBar.setVisibility(View.GONE);
+//                        }
+//                    }
+//                });
+//            }
+//        });
+
+//        tv_goToLogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(getApplicationContext(), Login.class));
+//            }
+//        });
+//        tv_returnHome.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(getApplicationContext(), Home.class));
+//            }
+//        });
+    }
+    public void register(View view){
+
+    }
+    public void registerDemo(View view){
+        String email = et_email.getText().toString().trim();
+        String password = et_password.getText().toString().trim();
+
+        if(TextUtils.isEmpty(email)){
+            et_email.setError("Email is required.");
+            return;
+        }
+
+        if(TextUtils.isEmpty(password)){
+            et_password.setError("Password is required.");
+            return;
+        }
+
+        if(password.length() < 6){
+            et_password.setError("Password must be greater or equals to 6 characters.");
+        }
+
+        progressBar.setVisibility(View.VISIBLE);
+
+        fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
 
             @Override
-            public void onClick(View v) {
-                String email = et_email.getText().toString().trim();
-                String password = et_password.getText().toString().trim();
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(Register.this, "User Created.", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
-                if(TextUtils.isEmpty(email)){
-                    et_email.setError("Email is required.");
-                    return;
                 }
-
-                if(TextUtils.isEmpty(password)){
-                    et_password.setError("Password is required.");
-                    return;
+                else{
+                    Toast.makeText(Register.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
                 }
-
-                if(password.length() < 6){
-                    et_password.setError("Password must be greater or equals to 6 characters.");
-                }
-
-                progressBar.setVisibility(View.VISIBLE);
-
-                fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(Register.this, "User Created.", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-
-                        }
-                        else{
-                            Toast.makeText(Register.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            progressBar.setVisibility(View.GONE);
-                        }
-                    }
-                });
             }
         });
-        tv_goToLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Login.class));
-            }
-        });
-        tv_returnHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Home.class));
-            }
-        });
+    }
+
+    public void goToLogin(View view){
+        Intent intent = new Intent(this, Login.class);
+        startActivity(intent);
+    }
+
+    public void returnHome(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
