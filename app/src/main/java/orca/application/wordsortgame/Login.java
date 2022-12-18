@@ -51,13 +51,16 @@ public class Login extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                DataSnapshot childId1 = snapshot.child("1");
-                if(childId1.child(et_username.getText().toString()).exists()){
-                    userModel = childId1.child(et_username.getText().toString()).getValue(UserModel.class);
+
+                if(snapshot.child(et_username.getText().toString()).exists()){
+                    userModel = snapshot.child(et_username.getText().toString()).getValue(UserModel.class);
                     if(userModel.getPassword().equals(et_password.getText().toString())){
                         Toast.makeText(Login.this, "Welcome back!", Toast.LENGTH_SHORT).show();
                         Log.d("Account", userModel.toString());
-//                        returnHome2(view);
+
+                        //Take username info to main page
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
                     }else{
                         Toast.makeText(Login.this, "Email or Password is not correct!", Toast.LENGTH_SHORT).show();
                         Log.d("Account", "The password is not correct.\n" + userModel.getPassword() + " is the right password");

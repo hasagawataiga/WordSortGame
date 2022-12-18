@@ -1,17 +1,18 @@
 package orca.application.wordsortgame;
 
 public class UserModel {
-//    private int Id;
+    private int Id;
     private String FullName;
     private String Email;
     private String PhoneNumber;
     private String Password;
     private int Score;
-
+    private String Username;
     @Override
     public String toString() {
         return "UserModel{" +
-//                "Id=" + Id +
+                "Id=" + Id +
+                ", Username='" + Username + '\'' +
                 ", FullName='" + FullName + '\'' +
                 ", Email='" + Email + '\'' +
                 ", PhoneNumber='" + PhoneNumber + '\'' +
@@ -20,13 +21,21 @@ public class UserModel {
                 '}';
     }
 
-//    public int getId() {
-//        return Id;
-//    }
+    public int getId() {
+        return Id;
+    }
 
-//    public void setId(int id) {
-//        Id = id;
-//    }
+    public void setId(int id) {
+        Id = id;
+    }
+
+    public String getUsername(){
+        return Username;
+    }
+
+    public void setUsername(String username){
+        Username = username;
+    }
 
     public String getFullName() {
         return FullName;
@@ -68,8 +77,11 @@ public class UserModel {
         Score = score;
     }
 
-    public UserModel(String fullName, String email, String phoneNumber, String password, int score) {
-//        Id = id;
+    public UserModel(){}
+
+    public UserModel(int id, String username, String fullName, String email, String phoneNumber, String password, int score) {
+        Id = id;
+        Username = username;
         FullName = fullName;
         Email = email;
         PhoneNumber = phoneNumber;
