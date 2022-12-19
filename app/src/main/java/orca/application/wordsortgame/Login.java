@@ -2,6 +2,7 @@ package orca.application.wordsortgame;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -60,6 +61,7 @@ public class Login extends AppCompatActivity {
 
                         //Take username info to main page
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        intent.putExtra("user", (Parcelable) userModel);
                         startActivity(intent);
                     }else{
                         Toast.makeText(Login.this, "Email or Password is not correct!", Toast.LENGTH_SHORT).show();

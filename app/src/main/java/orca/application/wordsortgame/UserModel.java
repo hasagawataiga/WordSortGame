@@ -1,6 +1,11 @@
 package orca.application.wordsortgame;
 
-public class UserModel {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+public class UserModel implements Parcelable {
     private int Id;
     private String FullName;
     private String Email;
@@ -8,6 +13,29 @@ public class UserModel {
     private String Password;
     private int Score;
     private String Username;
+
+    protected UserModel(Parcel in) {
+        Id = in.readInt();
+        FullName = in.readString();
+        Email = in.readString();
+        PhoneNumber = in.readString();
+        Password = in.readString();
+        Score = in.readInt();
+        Username = in.readString();
+    }
+
+    public static final Creator<UserModel> CREATOR = new Creator<UserModel>() {
+        @Override
+        public UserModel createFromParcel(Parcel in) {
+            return new UserModel(in);
+        }
+
+        @Override
+        public UserModel[] newArray(int size) {
+            return new UserModel[size];
+        }
+    };
+
     @Override
     public String toString() {
         return "UserModel{" +
@@ -87,5 +115,21 @@ public class UserModel {
         PhoneNumber = phoneNumber;
         Password = password;
         Score = score;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeInt(Id);
+        dest.writeString(Username);
+        dest.writeString(FullName);
+        dest.writeString(Email);
+        dest.writeString(PhoneNumber);
+        dest.writeString(Password);
+        dest.writeInt(Score);
     }
 }
