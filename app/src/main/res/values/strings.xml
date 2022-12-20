@@ -12,4 +12,6 @@
     <string name="CreateAccount">Create a New Account</string>
     <string name="NewHere">New Here? Create an Account</string>
     <string name="Username">Username</string>
+    <string name="Guest">Guest</string>
+    <string name="Zero">0</string>
 </resources>
