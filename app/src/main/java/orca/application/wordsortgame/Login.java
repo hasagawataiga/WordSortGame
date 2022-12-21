@@ -61,7 +61,7 @@ public class Login extends AppCompatActivity {
 
                         //Take username info to main page
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                        intent.putExtra("user", (Parcelable) userModel);
+                        intent.putExtra(Constants.USER, (Parcelable)userModel);
                         startActivity(intent);
                     }else{
                         Toast.makeText(Login.this, "Email or Password is not correct!", Toast.LENGTH_SHORT).show();

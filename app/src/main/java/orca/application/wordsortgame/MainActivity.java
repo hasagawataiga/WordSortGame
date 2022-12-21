@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -22,9 +23,10 @@ public class MainActivity extends AppCompatActivity {
         tv_score3 = findViewById(R.id.tv_score3);
         Bundle bundle = getIntent().getExtras();
         try{
-            userModel = bundle.getParcelable("user");
+            userModel = bundle.getParcelable(Constants.USER);
             tv_username2.setText(userModel.getFullName());
             tv_score3.setText(Integer.toString(userModel.getScore()));
+            Log.d("User", userModel.toString());
         }catch(Exception e){
             tv_username2.setText("Guest");
             tv_score3.setText("0");

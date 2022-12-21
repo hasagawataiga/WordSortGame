@@ -16,12 +16,12 @@ public class UserModel implements Parcelable {
 
     protected UserModel(Parcel in) {
         Id = in.readInt();
+        Username = in.readString();
         FullName = in.readString();
         Email = in.readString();
         PhoneNumber = in.readString();
         Password = in.readString();
         Score = in.readInt();
-        Username = in.readString();
     }
 
     public static final Creator<UserModel> CREATOR = new Creator<UserModel>() {
