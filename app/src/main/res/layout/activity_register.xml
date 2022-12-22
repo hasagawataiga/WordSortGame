@@ -19,13 +19,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="@string/WordSortGame"
+        android:text="@string/Logo"
         android:textColor="#000000"
         android:textSize="50dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,7 +54,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView2"
         app:layout_constraintVertical_bias="0.189">
@@ -76,40 +75,55 @@
             android:padding="10dp"
             android:textColor="#000000"
             android:textColorHint="#606060" />
+        <EditText
+            android:id="@+id/et_fullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@android:drawable/editbox_background"
+            android:backgroundTint="#CEFFDC"
+            android:ems="10"
+            android:hint="@string/FullName"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#606060" />
 
         <EditText
             android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/Email"
-            android:inputType="textPersonName"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
             android:background="@android:drawable/editbox_background"
             android:backgroundTint="#CEFFDC"
+            android:ems="10"
 
+            android:hint="@string/Email"
+            android:inputType="textEmailAddress"
             android:minHeight="48dp"
             android:padding="10dp"
             android:textColor="#000000"
-            android:textColorHint="#606060"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"/>
+            android:textColorHint="#606060" />
 
         <EditText
             android:id="@+id/et_phoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+
             android:background="@android:drawable/editbox_background"
             android:backgroundTint="#CEFFDC"
-
             android:ems="10"
             android:hint="@string/PhoneNumber"
-            android:inputType="textPersonName"
+            android:inputType="phone"
             android:minHeight="48dp"
             android:padding="10dp"
             android:textColor="#000000"
-            android:textColorHint="#606060"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"/>
+            android:textColorHint="#606060" />
 
 
         <EditText
@@ -174,7 +188,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toBottomOf="@+id/tv_goToLogin"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_goToLogin"
             tools:ignore="TouchTargetSizeCheck"
             android:layout_marginStart="90dp"
@@ -187,14 +201,12 @@
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="4dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
-
-
 
 
     <!--    app:fontFamily="@font/advent_pro_thin"-->

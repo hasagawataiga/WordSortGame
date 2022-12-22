@@ -117,6 +117,15 @@ public class UserModel implements Parcelable {
         Score = score;
     }
 
+    public UserModel(String username, String fullName, String email, String phoneNumber, String password, int score) {
+        Username = username;
+        FullName = fullName;
+        Email = email;
+        PhoneNumber = phoneNumber;
+        Password = password;
+        Score = score;
+    }
+
     @Override
     public int describeContents() {
         return 0;
