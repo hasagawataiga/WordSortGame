@@ -143,7 +143,7 @@
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             app:cornerRadius="10dp"
-            app:strokeColor="#000000"
+            app:strokeColor="#518FFC"
             app:strokeWidth="50dp"
             tools:ignore="MissingConstraints" />
 

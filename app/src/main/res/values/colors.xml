@@ -10,7 +10,10 @@
     <color name="colorPrimary">#0f9d58</color>
     <color name="colorPrimaryDark">#006d2d</color>
     <color name="colorAccent">#55cf86</color>
-<!--    <color name="colorPrimary">#3F51B5</color>-->
+    <color name="red">#FF1201</color>
+    <color name="yellow">#FFDD00</color>
+    <color name="green">#37FF00</color>
+    <!--    <color name="colorPrimary">#3F51B5</color>-->
 <!--    <color name="colorPrimaryDark">#303F9F</color>-->
 <!--    <color name="colorAccent">#FF44081</color>-->
 </resources>
